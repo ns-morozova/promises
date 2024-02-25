@@ -8,5 +8,6 @@ const gameSaving = new GameSaving();
 GameSavingLoader.load().then((saving) => {
     gameSaving.saving = saving;
   }, (error) => {
-    // ...
+    gameSaving.saving = undefined;
+    alert(error.message);
   });

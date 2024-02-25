@@ -6,5 +6,7 @@ test('Проверка класса GameSavingLoader', () => {
   const prom = loadd.load();
   prom.then((response) => {
     expect(response).toEqual(data);
+  }, err => {
+    expect(err.message).toBe('Ошибка');
   })
 });

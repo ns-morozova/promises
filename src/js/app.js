@@ -4,8 +4,9 @@ import GameSavingLoader from "./GameSavingLoader";
 import GameSaving from "./GameSaving";
 
 const gameSaving = new GameSaving();
+const gameLoad = new GameSavingLoader();
 
-GameSavingLoader.load().then((saving) => {
+gameLoad.load().then((saving) => {
     gameSaving.saving = saving;
   }, (error) => {
     gameSaving.saving = undefined;

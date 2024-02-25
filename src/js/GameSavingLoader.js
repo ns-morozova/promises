@@ -7,7 +7,11 @@ export default class GameSavingLoader {
             read().then((response) => {
                 json(response).then((response) => {
                     resolve(JSON.parse(response));
+                }, error => {
+                    reject(new Error(error.message));
                 });
+            }, error => {
+                reject(new Error(error.message));
             })
         });
     }

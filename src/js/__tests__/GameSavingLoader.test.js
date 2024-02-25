@@ -5,7 +5,5 @@ test('Проверка класса GameSavingLoader', () => {
   const load = new GameSavingLoader();
   load.load().then((response) => {
     expect(response).toEqual(data);
-  }, (error) => {
-    throw error;
   })
 });
